@@ -17,7 +17,7 @@ public class NoteServlet extends HttpServlet {
         
             String path = getServletContext().getRealPath("/WEB-INF/note.txt");
                         
-            //read all files
+            
             BufferedReader readFile;
             readFile = new BufferedReader(new FileReader(new File(path)));
             Note note = new Note(readFile.readLine(), readFile.readLine());
@@ -39,7 +39,7 @@ public class NoteServlet extends HttpServlet {
             throws ServletException, IOException {
             String path = getServletContext().getRealPath("/WEB-INF/note.txt");
             
-            //write the file
+            
             PrintWriter writeFile;
             writeFile = new PrintWriter(new BufferedWriter(new FileWriter(path, false)));
             writeFile.println(request.getParameter("title"));
